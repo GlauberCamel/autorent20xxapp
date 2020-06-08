@@ -79,7 +79,8 @@ export default class AnnouncementsView extends Component {
             <Text style={style.titleAnnouncement}>{item.name}</Text>
             <Text style={style.labelList}>Marca: {item.brand}</Text>
             <Text style={style.labelList}>Publicante: {item.user}</Text>
-            <Text>Valor: R$ {item.price.toFixed(2)}</Text>
+            <Text>Qtd dias: {item.days}</Text>
+            <Text>Valor: R$ {(item.days * item.price).toFixed(2)}</Text>
           </View>
         </View>
       </TouchableHighlight>
