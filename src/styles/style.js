@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-
+import {StyleSheet, Dimensions} from 'react-native';
+const screenWidth = Math.round(Dimensions.get('window').width);
 export default StyleSheet.create({
   text: {
     paddingHorizontal: 15,
@@ -31,7 +31,7 @@ export default StyleSheet.create({
     width: '100%',
   },
   imageCardAnnouncement: {
-    width: 500,
+    width: screenWidth,
     height: 300,
     alignSelf: 'center',
   },
@@ -62,6 +62,11 @@ export default StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
     color: '#2c3e50',
+  },
+  labelList: {
+    fontSize: 15,
+    color: '#2c3e50',
+    width: screenWidth * 0.6,
   },
   listActors: {
     paddingHorizontal: 15,

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {
+  Dimensions,
   FlatList,
   Image,
   ScrollView,
@@ -66,6 +67,7 @@ export default class AnnouncementsView extends Component {
   };
 
   list = ({item}) => {
+    const screenWidth = Math.round(Dimensions.get('window').width) * 0.5;
     return (
       <TouchableHighlight onPress={() => this.showAnnouncement(item)}>
         <View style={style.listAnnouncements}>
@@ -75,8 +77,8 @@ export default class AnnouncementsView extends Component {
           />
           <View style={style.listAnnouncementsCol}>
             <Text style={style.titleAnnouncement}>{item.name}</Text>
-            <Text>Marca: {item.brand}</Text>
-            <Text>Publicante: {item.user}</Text>
+            <Text style={style.labelList}>Marca: {item.brand}</Text>
+            <Text style={style.labelList}>Publicante: {item.user}</Text>
             <Text>Valor: R$ {item.price.toFixed(2)}</Text>
           </View>
         </View>

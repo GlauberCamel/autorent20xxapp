@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {Image, ScrollView, Text, ToastAndroid, View} from 'react-native';
+import {
+  Image,
+  ScrollView,
+  Text,
+  ToastAndroid,
+  View,
+  Dimensions,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Card, Divider} from 'react-native-elements';
 import style from '../styles/style';
@@ -62,14 +69,11 @@ class PublicationView extends Component {
   };
 
   _renderItem = ({item, index}) => {
-    return (
-      <View>
-        <Image style={style.imageCardAnnouncement} source={{uri: item}} />
-      </View>
-    );
+    return <Image style={style.imageCardAnnouncement} source={{uri: item}} />;
   };
 
   render() {
+    const screenWidth = Math.round(Dimensions.get('window').width) * 0.84;
     return (
       <ScrollView>
         <MyHeader />
@@ -83,8 +87,9 @@ class PublicationView extends Component {
               layoutCardOffset={'18'}
               data={this.state.announcement.images}
               renderItem={this._renderItem}
-              sliderWidth={330}
-              itemWidth={330}
+              sliderWidth={screenWidth}
+              itemWidth={screenWidth}
+              slideStyle={{height: 'auto'}}
             />
             <View nativeID="info_general_movie" style={{paddingTop: 10}}>
               <Text style={style.text}>{this.state.announcement.name}</Text>
