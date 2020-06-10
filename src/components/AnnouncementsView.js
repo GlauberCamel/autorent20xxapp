@@ -52,7 +52,7 @@ export default class AnnouncementsView extends Component {
 
   async componentDidMount() {
     await axios
-      .get('https://1450c8dce993.ngrok.io/publication/findAll')
+      .get('https://64da3ea8394c.ngrok.io/publication/findAll')
       .then((response) => {
         this.setState({announcements: response.data});
         this.setState({originalList: response.data});
@@ -79,8 +79,10 @@ export default class AnnouncementsView extends Component {
             <Text style={style.titleAnnouncement}>{item.name}</Text>
             <Text style={style.labelList}>Marca: {item.brand}</Text>
             <Text style={style.labelList}>Publicante: {item.user}</Text>
-            <Text>Qtd dias: {item.days}</Text>
-            <Text>Valor: R$ {(item.days * item.price).toFixed(2)}</Text>
+            <Text style={style.labelList}>Qtd dias: {item.days}</Text>
+            <Text style={style.labelList}>
+              Valor: R$ {(item.days * item.price).toFixed(2)}
+            </Text>
           </View>
         </View>
       </TouchableHighlight>

@@ -5,7 +5,7 @@ export default function MyHeader() {
   return (
     <Header
       containerStyle={{
-        backgroundColor: '#ffc107',
+        backgroundColor: '#ffc000',
         flexDirection: 'column',
         alignContent: 'center',
       }}

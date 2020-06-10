@@ -13,6 +13,7 @@ import style from '../styles/style';
 import PropTypes from 'prop-types';
 import Carousel from 'react-native-snap-carousel';
 import MyHeader from './MyHeader';
+import HTML from 'react-native-render-html';
 
 class PublicationView extends Component {
   constructor(props) {
@@ -93,9 +94,10 @@ class PublicationView extends Component {
             />
             <View nativeID="info_general_movie" style={{paddingTop: 10}}>
               <Text style={style.text}>{this.state.announcement.name}</Text>
-              <Text style={{textAlign: 'justify', padding: 10}}>
-                {this.state.announcement.carDescription}
-              </Text>
+              <HTML
+                html={this.state.announcement.carDescription}
+                imagesMaxWidth={Dimensions.get('window').width}
+              />
             </View>
             <View nativeID="info_review">
               <Divider />

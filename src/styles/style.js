@@ -59,27 +59,13 @@ export default StyleSheet.create({
     margin: 10,
   },
   titleAnnouncement: {
-    fontSize: 15,
+    fontSize: 13,
     fontWeight: 'bold',
     color: '#2c3e50',
   },
   labelList: {
-    fontSize: 15,
+    fontSize: 13,
     color: '#2c3e50',
     width: screenWidth * 0.6,
-  },
-  listActors: {
-    paddingHorizontal: 15,
-    height: 70,
-    backgroundColor: '#ecf0f1',
-    borderWidth: 0.25,
-    borderColor: '#2c3e50',
-    flexDirection: 'row',
-    alignItems: 'center',
-    color: '#2c3e50',
-  },
-  imageListActor: {
-    width: 100,
-    height: 100,
   },
 });
