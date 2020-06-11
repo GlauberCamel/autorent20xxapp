@@ -52,7 +52,9 @@ export default class AnnouncementsView extends Component {
 
   async componentDidMount() {
     await axios
-      .get('https://64da3ea8394c.ngrok.io/publication/findAll')
+      .get(
+        'http://ec2-54-81-80-123.compute-1.amazonaws.com:8080/publication/findAll',
+      )
       .then((response) => {
         this.setState({announcements: response.data});
         this.setState({originalList: response.data});
